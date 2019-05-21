@@ -1,6 +1,13 @@
 import Component from './Component.js';
 
 class ImageItem extends Component {
+    render() {
+        const listItem = this.renderDOM();
+        //const image = this.props.image;
+
+        return listItem;
+    }
+
     renderTemplate() {
         const image = this.props.image;
 

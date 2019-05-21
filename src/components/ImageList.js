@@ -4,7 +4,7 @@ import ImageItem from './ImageItem.js';
 class ImageList extends Component {
     render() {
         const list = this.renderDOM();
-        const images = this.props.images();
+        const images = this.props.images;
 
         images.forEach(image => {
             const imageItem = new ImageItem({ image });

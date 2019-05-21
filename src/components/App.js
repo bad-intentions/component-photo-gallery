@@ -1,5 +1,7 @@
 import Component from "./Component.js";
 import Header from "./Header.js";
+import images from "../../data/images-data.js";
+import ImageList from "./ImageList.js";
 
 class App extends Component {
     render() {
@@ -10,6 +12,13 @@ class App extends Component {
 
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
+
+        const imageList = new ImageList({ images });
+        console.log(imageList);
+        
+
+        const imageListDOM = imageList.render();
+        main.appendChild(imageListDOM);
 
         return dom;
     }

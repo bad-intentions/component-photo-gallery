@@ -13,7 +13,7 @@ class ImageItem extends Component {
 
         return /*html*/ `
             <li>
-                <h2>${image.title}</h2>
+                <h2 class="name">${image.title}</h2>
                 <img src="${image.url}">
             </li>
         `;

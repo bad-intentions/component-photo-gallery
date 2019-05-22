@@ -41,3 +41,22 @@ test('filters on name case insensitive', assert => {
         horns: 2
     }])
 });
+
+test('return all on no filter', assert => {
+    const filter = { title: '' };
+
+    const filtered = filterImages(images, filter);
+
+    assert.deepEqual(filtered, images);
+});
+
+test('matches horns as well as title', assert => {
+    const filter = { title: 'k' };
+
+    const filtered = filterImages(images, filter);
+    
+    assert.deepEqual(filtered, [{
+        title: `Serious Jackson's Chameleon`,
+        horns: 1
+    }]);
+});

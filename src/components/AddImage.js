@@ -14,7 +14,6 @@ class AddImage extends Component {
                 title: formData.get('title'),
                 url: formData.get('url')
             };
-            console.log(newImage);
 
             onAdd(newImage);
         });

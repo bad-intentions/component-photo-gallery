@@ -1,7 +1,7 @@
-import Component from "./Component.js";
-import Header from "./Header.js";
-import images from "../../data/images-data.js";
-import ImageList from "./ImageList.js";
+import Component from './Component.js';
+import Header from './Header.js';
+import images from '../../data/images-data.js';
+import ImageList from './ImageList.js';
 import AddImage from './AddImage.js';
 
 class App extends Component {
@@ -16,7 +16,6 @@ class App extends Component {
 
         const addImage = new AddImage({ 
             onAdd: (newImage) => {
-                console.log(newImage);
                 images.unshift(newImage);
                 imageList.update({ images });
             }

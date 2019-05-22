@@ -20,13 +20,19 @@ class App extends Component {
                 images.unshift(newImage);
                 imageList.update({ images });
             }
-         });
+        });
         
-
         const addImageDOM = addImage.render();
         main.appendChild(addImageDOM);
 
-        const imageList = new ImageList({ images });
+        const imageList = new ImageList({ 
+            images,
+            onRemove: (imageToRemove) => {
+                const index = images.indexOf(imageToRemove);
+                images.splice(index, 1);
+                imageList.update({ images });
+            }
+        });
 
         const imageListDOM = imageList.render();
         main.appendChild(imageListDOM);

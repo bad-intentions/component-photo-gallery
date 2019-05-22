@@ -6,8 +6,9 @@ class ImageList extends Component {
         const list = this.renderDOM();
         const images = this.props.images;
 
+        const onRemove = this.props.onRemove;
         images.forEach(image => {
-            const imageItem = new ImageItem({ image });
+            const imageItem = new ImageItem({ image, onRemove });
             const imageItemDOM = imageItem.render();
             list.appendChild(imageItemDOM);
         });

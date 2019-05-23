@@ -6,7 +6,18 @@ class Filter extends Component {
         const input = dom.querySelector('input');
         input.addEventListener('input', () => {
             this.props.onFilter({
-                title: input.value
+                title: input.value,
+                horns: ''
+            })
+        });
+
+        const horns = dom.querySelector('select');
+        horns.addEventListener('change', () => {
+            const hornValue = horns.value;
+            console.log(hornValue);
+            this.props.onFilter({
+                title: '',
+                horns: parseInt(hornValue)
             })
         });
 
@@ -16,8 +27,8 @@ class Filter extends Component {
         return /*html*/ `
             <section class="filter-section">
                 <input class="filter" name="filter">
-                <select class="horns-input" name="filter">
-                    <option>All</option>
+                <select id="horn-number" class="horns-input" name="filter">
+                    <option value="-1">All</option>
                     <option value="1">1 Horn</option>
                     <option value="2">2 Horns</option>
                     <option value="3">3 Horns</option>

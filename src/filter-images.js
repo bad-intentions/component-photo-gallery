@@ -1,4 +1,5 @@
 function filterImages(images, filter) {
+    console.log(filter);
     const lowerCaseTitleFilter = filter.title.toLowerCase();
     return images.filter(image => {
         const lowerCaseTitle = image.title.toLowerCase();

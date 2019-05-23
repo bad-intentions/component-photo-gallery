@@ -30,6 +30,7 @@ class App extends Component {
             onFilter: filter => {
                 const filtered = filterImages(images, filter);
                 imageList.update({ images: filtered });
+
             }
         });
         main.appendChild(filter.render());

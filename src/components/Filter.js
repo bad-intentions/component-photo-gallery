@@ -7,14 +7,14 @@ class Filter extends Component {
         const select = dom.querySelector('select');
         input.addEventListener('input', () => {
             this.props.onFilter({
-                title: input.value,
+                text: input.value,
                 horns: parseInt(select.value)
             });
         });
 
         select.addEventListener('change', () => {
             this.props.onFilter({
-                title: input.value,
+                text: input.value,
                 horns: parseInt(select.value)
             });
         });

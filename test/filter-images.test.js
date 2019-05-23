@@ -51,7 +51,9 @@ test('return all on no filter', assert => {
 });
 
 test('matches horns as well as title', assert => {
-    const filter = { title: 'k' };
+    const filter = { 
+        title: 'k', 
+    };
 
     const filtered = filterImages(images, filter);
     
@@ -60,3 +62,4 @@ test('matches horns as well as title', assert => {
         horns: 1
     }]);
 });
+

@@ -1,23 +1,22 @@
 import Component from './Component.js';
 
 class Filter extends Component {
+   
     render() {
         const dom = this.renderDOM();
         const input = dom.querySelector('input');
+        const select = dom.querySelector('select');
         input.addEventListener('input', () => {
             this.props.onFilter({
                 title: input.value,
-                horns: ''
+                horns: parseInt(select.value)
             })
         });
 
-        const horns = dom.querySelector('select');
-        horns.addEventListener('change', () => {
-            const hornValue = horns.value;
-            console.log(hornValue);
+        select.addEventListener('change', () => {
             this.props.onFilter({
-                title: '',
-                horns: parseInt(hornValue)
+                title: input.value,
+                horns: parseInt(select.value)
             })
         });
 
@@ -28,7 +27,7 @@ class Filter extends Component {
             <section class="filter-section">
                 <input class="filter" name="filter">
                 <select id="horn-number" class="horns-input" name="filter">
-                    <option value="-1">All</option>
+                    <option value="0">All</option>
                     <option value="1">1 Horn</option>
                     <option value="2">2 Horns</option>
                     <option value="3">3 Horns</option>

@@ -2,7 +2,7 @@ import filterImages from '../src/filter-images.js';
 
 const test = QUnit.test;
 
-QUnit.module('filter images')
+QUnit.module('filter images');
 
 const images = [
     {
@@ -17,7 +17,7 @@ const images = [
         'title': 'Smaug',
         'horns': 100
     }
-]
+];
 
 test('filters on title', assert => {
     const filter = { title: 'Liz' };
@@ -39,7 +39,7 @@ test('filters on name case insensitive', assert => {
     assert.deepEqual(filtered, [{
         title: 'Horned Lizard',
         horns: 2
-    }])
+    }]);
 });
 
 test('return all on no filter', assert => {

@@ -9,14 +9,14 @@ class Filter extends Component {
             this.props.onFilter({
                 title: input.value,
                 horns: parseInt(select.value)
-            })
+            });
         });
 
         select.addEventListener('change', () => {
             this.props.onFilter({
                 title: input.value,
                 horns: parseInt(select.value)
-            })
+            });
         });
 
         return dom;
